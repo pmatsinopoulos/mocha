@@ -84,7 +84,7 @@ module Mocha
         end
       end
       if @original_visibility
-        Module.instance_method(@original_visibility).bind(stubbee.__metaclass__).call(method)
+        Module.instance_method(@original_visibility).bind(stubbee.__metaclass__).call(method) rescue nil
       end
     end
 
